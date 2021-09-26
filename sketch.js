@@ -31,6 +31,14 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
+window.addEventListener('orientationchange', function (event) {
+  console.log(
+    'the orientation of the device is now ' +
+      event.target.screen.orientation.angle
+  );
+  resizeCanvas(windowWidth, windowHeight);
+});
+
 function createBoard() {
   for (let i = 0; i < 64; i++) {
     board[i] = 0;
