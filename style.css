@@ -69,6 +69,7 @@ body {
   visibility: visible !important;
 }
 
-#canvas {
+#sketch-container {
   position: fixed;
+  z-index: 2;
 }

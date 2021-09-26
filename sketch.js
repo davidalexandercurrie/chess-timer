@@ -1,16 +1,10 @@
 let cnv;
 let board = [];
 
-function centerCanvas() {
-  var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 2;
-  cnv.position(x, y);
-}
-
 function setup() {
   cnv = createCanvas(windowWidth, windowHeight);
-  centerCanvas();
   cnv.hide();
+  cnv.parent('sketch-container');
   cnv.mousePressed(() => {
     cnv.hide();
   });
@@ -35,7 +29,6 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  centerCanvas();
 }
 
 function createBoard() {
