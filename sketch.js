@@ -25,6 +25,7 @@ function draw() {
       square((height / 8) * x, (height / 8) * y, height / 8);
     }
   }
+  counter++;
 }
 
 function windowResized() {
@@ -37,6 +38,7 @@ window.addEventListener('orientationchange', function (event) {
       event.target.screen.orientation.angle
   );
   resizeCanvas(windowWidth, windowHeight);
+  console.log(width, height);
 });
 
 function createBoard() {
