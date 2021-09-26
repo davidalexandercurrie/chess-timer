@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 2em;
+  font-size: 3em;
   background: blue;
 }
 .active {
@@ -37,6 +37,12 @@ body {
   font-size: 2em;
   background: white;
 }
+#player-1 {
+  transform: rotate(270deg);
+}
+#player-2 {
+  transform: rotate(90deg);
+}
 
 #overlay {
   visibility: hidden;
@@ -49,7 +55,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .show-overlay {
