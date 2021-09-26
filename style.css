@@ -61,3 +61,7 @@ body {
 .show-overlay {
   visibility: visible !important;
 }
+
+#canvas {
+  position: fixed;
+}

@@ -41,6 +41,7 @@ function newPhase() {
   let overlay = document.getElementById('overlay');
   setOverlayText(overlay);
   if (phase == 1) {
+    cnv.show();
     resetPhase(7);
   } else if (phase == 2) {
     resetPhase(7);
