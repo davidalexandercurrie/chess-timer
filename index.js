@@ -10,9 +10,18 @@ document.getElementById('overlay').addEventListener('click', function () {
   this.classList.remove('show-overlay');
 });
 
+document.getElementById('reset-button').addEventListener('click', function () {
+  phase = 0;
+  turn = [5, 5];
+  document.getElementById('player-2').classList.add('active');
+  document.getElementById('player-1').classList.remove('active');
+  for (let index = 0; index < 2; index++) {
+    timers[index].innerText = `${turn[index]} turns left`;
+  }
+});
+
 timers.forEach((item, index) => {
   item.addEventListener('click', () => {
-    console.log(phase);
     pressButton(item, index);
     turn[index]--;
     if (!gameStarted) {

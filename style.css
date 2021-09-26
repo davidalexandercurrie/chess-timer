@@ -8,8 +8,8 @@ body {
 }
 
 .timer-button {
-  height: 100%;
-  width: 50%;
+  height: 100vh;
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,17 +17,31 @@ body {
   font-size: 3em;
   background: blue;
 }
+#menu {
+  height: 100%;
+  width: 10%;
+  background: red;
+}
 .active {
   background: white;
   color: black;
   pointer-events: none;
 }
+
+#reset-button {
+  background: pink;
+  width: 100%;
+  height: 33.33%;
+  font-size: 13vw;
+}
+
 .container {
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 #turn-number {
