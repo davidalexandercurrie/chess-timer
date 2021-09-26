@@ -9,7 +9,7 @@ function centerCanvas() {
 function setup() {
   cnv = createCanvas(windowWidth, windowHeight);
   centerCanvas();
-  // cnv.hide();
+  cnv.hide();
   cnv.mousePressed(() => {
     cnv.hide();
   });
