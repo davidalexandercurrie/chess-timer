@@ -18,6 +18,7 @@ document.getElementById('reset-button').addEventListener('click', function () {
   for (let index = 0; index < 2; index++) {
     timers[index].innerText = `${turn[index]} turns left`;
   }
+  createBoard();
 });
 
 timers.forEach((item, index) => {
