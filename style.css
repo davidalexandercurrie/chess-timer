@@ -37,3 +37,21 @@ body {
   font-size: 2em;
   background: white;
 }
+
+#overlay {
+  visibility: hidden;
+  background: purple;
+  z-index: 1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2em;
+}
+
+.show-overlay {
+  visibility: visible !important;
+}

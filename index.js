@@ -1,24 +1,30 @@
 let gameStarted = false;
 let timers = [...document.getElementsByClassName('timer-button')];
 timers[0].classList.add('active');
-let counts = [600, 600];
 let timerIntervals = [];
-let turn = 1;
+let turn = [5, 5];
+let phase = 0;
+let overlayText = ['Game Start', 'FIRE', 'FAMINE', 'FLOOD', 'Game End'];
+
+document.getElementById('overlay').addEventListener('click', function () {
+  this.classList.remove('show-overlay');
+});
 
 timers.forEach((item, index) => {
   item.addEventListener('click', () => {
+    console.log(phase);
     pressButton(item, index);
+    turn[index]--;
     if (!gameStarted) {
       gameStarted = true;
-      makeTimer(item, index);
+      turnCount(index);
     } else {
-      clearInterval(timerIntervals[index * -1 + 1]);
-      makeTimer(item, index);
+      turnCount(index);
     }
-    if (index == 0) {
-      turn++;
+    if (turn[0] == 0 && turn[1] == 0) {
+      phase++;
+      newPhase();
     }
-    document.getElementById('turn-number').innerText = `Turn ${turn}`;
   });
 });
 
@@ -27,13 +33,35 @@ function pressButton(item, index) {
   timers[index * -1 + 1].classList.remove('active');
 }
 
-function makeTimer(item, index) {
-  timerIntervals[index] = setInterval(() => {
-    counts[index * -1 + 1]--;
-    console.log(counts[0]);
-    item.innerText = `${Math.floor(counts[index * -1 + 1] / 60)}:${
-      counts[index * -1 + 1] % 60
-    }`;
-    console.log(timerIntervals);
-  }, 1000);
+function turnCount(index) {
+  timers[index].innerText = `${turn[index]} turns left`;
+}
+
+function newPhase() {
+  let overlay = document.getElementById('overlay');
+  setOverlayText(overlay);
+  if (phase == 1) {
+    resetPhase(7);
+  } else if (phase == 2) {
+    resetPhase(7);
+  } else if (phase >= 3) {
+    resetPhase(2);
+  }
+}
+
+function resetPhase(inc) {
+  turn.forEach((item, index, arr) => {
+    arr[index] += inc;
+    turnCount(index);
+  });
+}
+
+function setOverlayText(overlay) {
+  overlay.classList.add('show-overlay');
+  overlay.innerText =
+    phase <= 2
+      ? overlayText[phase]
+      : phase > 2 && phase < 10
+      ? overlayText[3]
+      : overlayText[4];
 }
