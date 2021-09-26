@@ -56,7 +56,6 @@ function createBoard() {
   rand(20, 23, 1);
   rand(40, 43, 1);
   rand(44, 47, 1);
-  console.log(board);
 }
 
 function rand(min, max, num) {
@@ -65,14 +64,11 @@ function rand(min, max, num) {
   for (let i = 0; i < max - min + 1; i++) {
     arr[i] = min + i;
   }
-  console.log(arr);
 
   for (let i = 0; i < num; i++) {
     let r = Math.floor(random(arr.length));
-    console.log(r);
     board[arr[r]] = 1;
     vals.push(arr[r]);
     arr.splice(r, 1);
   }
-  console.log(vals);
 }

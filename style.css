@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 3em;
+  font-size: 5vw;
   background: blue;
 }
 #menu {
@@ -44,17 +44,10 @@ body {
   height: 100vh;
 }
 
-#turn-number {
-  position: fixed;
-  width: 100%;
-  text-align: center;
-  font-size: 2em;
-  background: white;
-}
-#player-1 {
+#p1-text {
   transform: rotate(270deg);
 }
-#player-2 {
+#p2-text {
   transform: rotate(90deg);
 }
 
