@@ -69,8 +69,15 @@ body {
 }
 
 #sketch-container {
-  width: 100vw;
-  height: 100vh;
+  background: white;
   position: fixed;
   visibility: hidden;
+  margin: 0;
+  display: flex;
+
+  /* This centers our sketch horizontally. */
+  justify-content: center;
+
+  /* This centers our sketch vertically. */
+  align-items: center;
 }
