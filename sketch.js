@@ -2,16 +2,22 @@ let cnv;
 let board = [];
 
 function setup() {
-  cnv = createCanvas(windowWidth, windowHeight);
+  let w = 0;
+  let h = 0;
+  if (width < height) {
+    w = windowHeight;
+    h = windowWidth;
+  } else {
+    w = windowWidth;
+    h = windowHeight;
+  }
+  cnv = createCanvas(w, h);
   cnv.parent('sketch-container');
 
   createBoard();
 }
 
 function draw() {
-  if (width < height) {
-    resizeCanvas(windowWidth, windowHeight);
-  }
   background(255);
   rotate(PI / 2);
   translate(0, -height - (width - height) / 2);
@@ -28,9 +34,9 @@ function draw() {
   counter++;
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
+// function windowResized() {
+//   resizeCanvas(windowWidth, windowHeight);
+// }
 
 window.addEventListener('orientationchange', function (event) {
   console.log(
