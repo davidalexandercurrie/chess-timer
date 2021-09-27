@@ -90,8 +90,9 @@ body {
 #sketch-container {
   background: white;
   position: fixed;
+  width: 100vw;
+  height: 100vh;
   visibility: hidden;
-  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

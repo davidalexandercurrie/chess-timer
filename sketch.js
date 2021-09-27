@@ -2,16 +2,7 @@ let cnv;
 let board = [];
 
 function setup() {
-  let w = 0;
-  let h = 0;
-  if (width < height) {
-    w = windowHeight;
-    h = windowWidth;
-  } else {
-    w = windowWidth;
-    h = windowHeight;
-  }
-  cnv = createCanvas(w, h);
+  cnv = createCanvas(windowWidth, windowHeight);
   cnv.parent('sketch-container');
 
   createBoard();
@@ -31,7 +22,6 @@ function draw() {
       square((height / 8) * x, (height / 8) * y, height / 8);
     }
   }
-  counter++;
 }
 
 // function windowResized() {
