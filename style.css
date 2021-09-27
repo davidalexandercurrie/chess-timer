@@ -54,7 +54,6 @@ body {
 #overlay {
   visibility: hidden;
   background: purple;
-  z-index: 1;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -73,5 +72,5 @@ body {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 2;
+  visibility: hidden;
 }

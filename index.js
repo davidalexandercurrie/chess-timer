@@ -21,6 +21,12 @@ document.getElementById('reset-button').addEventListener('click', function () {
   createBoard();
 });
 
+document
+  .getElementById('sketch-container')
+  .addEventListener('click', function () {
+    this.style.visibility = 'hidden';
+  });
+
 timers.forEach((item, index) => {
   item.addEventListener('click', () => {
     pressButton(item, index);
@@ -51,7 +57,7 @@ function newPhase() {
   let overlay = document.getElementById('overlay');
   setOverlayText(overlay);
   if (phase == 1) {
-    cnv.show();
+    document.getElementById('sketch-container').style.visibility = 'visible';
     resetPhase(7);
   } else if (phase == 2) {
     resetPhase(7);

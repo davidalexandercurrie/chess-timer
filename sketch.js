@@ -3,11 +3,8 @@ let board = [];
 
 function setup() {
   cnv = createCanvas(windowWidth, windowHeight);
-  cnv.hide();
   cnv.parent('sketch-container');
-  cnv.mousePressed(() => {
-    cnv.hide();
-  });
+
   createBoard();
 }
 
@@ -38,7 +35,6 @@ window.addEventListener('orientationchange', function (event) {
       event.target.screen.orientation.angle
   );
   resizeCanvas(windowWidth, windowHeight);
-  console.log(width, height);
 });
 
 function createBoard() {
