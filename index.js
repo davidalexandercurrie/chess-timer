@@ -7,7 +7,7 @@ let phase = 0;
 let overlayText = ['Game Start', 'FIRE', 'FAMINE', 'FLOOD', 'Game End'];
 
 document.getElementById('overlay').addEventListener('click', function () {
-  this.classList.remove('show-overlay');
+  this.classList.remove('visible');
 });
 
 document.getElementById('reset-button').addEventListener('click', function () {
@@ -74,7 +74,7 @@ function resetPhase(inc) {
 }
 
 function setOverlayText(overlay) {
-  overlay.classList.add('show-overlay');
+  overlay.classList.add('visible');
   overlay.innerText =
     phase <= 2
       ? overlayText[phase]
