@@ -1,5 +1,6 @@
 let gameStarted = false;
 let timers = [...document.getElementsByClassName('timer-button')];
+let timerText = [...document.getElementsByClassName('timer-text')];
 timers[0].classList.add('active');
 let timerIntervals = [];
 let turn = [5, 5];
@@ -16,7 +17,7 @@ document.getElementById('reset-button').addEventListener('click', function () {
   document.getElementById('player-2').classList.add('active');
   document.getElementById('player-1').classList.remove('active');
   for (let index = 0; index < 2; index++) {
-    timers[index].innerText = `${turn[index]} turns left`;
+    timerText[index].innerText = `${turn[index]} turns left`;
   }
   createBoard();
 });
@@ -50,7 +51,7 @@ function pressButton(item, index) {
 }
 
 function turnCount(index) {
-  timers[index].innerText = `${turn[index]} turns left`;
+  timerText[index].innerText = `${turn[index]} turns left`;
 }
 
 function newPhase() {
