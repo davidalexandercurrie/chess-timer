@@ -9,6 +9,9 @@ function setup() {
 }
 
 function draw() {
+  if (width < height) {
+    resizeCanvas(windowWidth, windowHeight);
+  }
   background(255);
   rotate(PI / 2);
   translate(0, -height - (width - height) / 2);
